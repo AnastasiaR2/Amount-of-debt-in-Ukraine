@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script type="module" src="./assets/js/app.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./assets/js/app.js"></script>
+  </head>
+  <body>
 
-  <div class="container" id="app">
+    <div class="container" id="app">
 
-    <div>
-      
-      <h2 class="mt-5 mb-4">Период №1</h2>
-      <input v-model="date1" class="me-5" type="date">
-      <input v-model="date2" class="ms-5" type="date">
-      <p class="fw-bold fs-5">Взято в долг: млн. грн.</p>
-      <p class="fw-bold fs-5">Надо вернуть: млн. грн.</p>
-    
+      <div class="d-flex justify-content-between mt-5">
+
+        <div>
+          
+          <h2 class="mb-4">Период №1</h2>
+          <input v-model="date1" class="me-5" type="date">
+          <input v-model="date2" class="ms-5" type="date">
+          <p class="fw-bold fs-5">Взято в долг: {{amountTaken1.toFixed()}} млн. грн.</p>
+          <p class="fw-bold fs-5">Надо вернуть: {{amountReturn1.toFixed()}} млн. грн.</p>
+        
+        </div>
+
+        <div class="d-flex flex-column">
+
+          <button @click="calculateDiff" type="button" class="btn btn-secondary mt-5 mb-auto">Посчитать</button>
+          <i class="bi bi-arrow-up-square fs-3">{{diffTaken}}</i>
+          <i class="bi bi-arrow-down-square fs-3 mb-3">{{diffReturn}}</i>
+
+        </div>
+
+        <div>
+          
+          <h2 class="mb-4">Период №2</h2>
+          <input v-model="date3" class="me-5" type="date">
+          <input v-model="date4" class="ms-5" type="date">
+          <p class="fw-bold fs-5">Взято в долг: {{amountTaken2.toFixed()}} млн. грн.</p>
+          <p class="fw-bold fs-5">Надо вернуть: {{amountReturn2.toFixed()}} млн. грн.</p>
+        
+        </div>
+
+      </div>
+
     </div>
-
-  </div>
-  
-  <h1></h1>
-
-</body>
+    
+  </body>
 </html>
