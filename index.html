@@ -21,8 +21,8 @@
           <h2 class="mb-4">Период №1</h2>
           <input v-model="date1" class="me-5" type="date">
           <input v-model="date2" class="ms-5" type="date">
-          <p class="fw-bold fs-5">Взято в долг: {{amountTaken1.toFixed()}} млн. грн.</p>
-          <p class="fw-bold fs-5">Надо вернуть: {{amountReturn1.toFixed()}} млн. грн.</p>
+          <p class="fw-bold fs-5">Взято в долг: {{(amountTaken1 / 1000000).toFixed()}} млн. грн.</p>
+          <p class="fw-bold fs-5">Надо вернуть: {{(amountReturn1 / 1000000).toFixed()}} млн. грн.</p>
         
         </div>
 
@@ -39,8 +39,8 @@
           <h2 class="mb-4">Период №2</h2>
           <input v-model="date3" class="me-5" type="date">
           <input v-model="date4" class="ms-5" type="date">
-          <p class="fw-bold fs-5">Взято в долг: {{amountTaken2.toFixed()}} млн. грн.</p>
-          <p class="fw-bold fs-5">Надо вернуть: {{amountReturn2.toFixed()}} млн. грн.</p>
+          <p class="fw-bold fs-5">Взято в долг: {{(amountTaken2 / 1000000).toFixed()}} млн. грн.</p>
+          <p class="fw-bold fs-5">Надо вернуть: {{(amountReturn2 / 1000000).toFixed()}} млн. грн.</p>
         
         </div>
 
